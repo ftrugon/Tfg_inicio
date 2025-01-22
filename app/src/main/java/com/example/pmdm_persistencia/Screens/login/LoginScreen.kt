@@ -80,7 +80,7 @@ fun Login(modifier: Modifier,navController: NavController,viewModel: LoginViewMo
                 .background(Color(0xFFCDCDCD)),
         ) {
 
-            UsernameField("Username",username,{
+            UsernameField("User name",username,{
                 viewModel.changeUser(it)
                 viewModel.checkLogin()
             },Constantes.textFieldColorValues())
@@ -107,7 +107,7 @@ fun Login(modifier: Modifier,navController: NavController,viewModel: LoginViewMo
                         else rememberMeDataStore.saveRemember("n")
 
                     }
-                    navController.navigate(AppScreen.ProfileScreen.route)
+                    navController.navigate(AppScreen.ProfileScreen.route    )
                 }else{
                     showError = true
                     viewModel.resetUserAndPass()
@@ -135,18 +135,9 @@ fun Login(modifier: Modifier,navController: NavController,viewModel: LoginViewMo
         }*/
 
         // Campo de no estas registrado?
-        Button(
-            onClick = {
-                //val isLogged = false
-                navController.navigate(AppScreen.RegisterScreen.route)
-            },
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFFCDCDCD),
-                disabledContainerColor = Color.Transparent
-            ),
-            modifier = Modifier.align(Alignment.CenterHorizontally)
-        ){
-            Text("Not registered yet?")
+
+        NotRegisteredYetButton(Modifier.align(Alignment.CenterHorizontally)) {
+            navController.navigate(AppScreen.RegisterScreen.route)
         }
 
         //Para probar el datastore

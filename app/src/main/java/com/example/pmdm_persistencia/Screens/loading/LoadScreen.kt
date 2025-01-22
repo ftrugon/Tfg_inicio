@@ -23,6 +23,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -53,6 +54,7 @@ fun LoadScreen(modifier: Modifier, navController: NavController){
             .clickable {
                 navController.navigate(AppScreen.LoginScreen.route)
                        }
+            .testTag("ColumnClic")
         ,
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -69,7 +71,7 @@ fun LoadScreen(modifier: Modifier, navController: NavController){
         )
 
         Text(
-            modifier = Modifier.padding(10.dp),
+            modifier = Modifier.padding(10.dp).testTag("TextWelcome"),
             text =text,
             fontWeight = FontWeight(1000),
             fontSize = 5.em,

@@ -41,7 +41,6 @@ fun AppNavigation(modifier: Modifier){
 
         composable(AppScreen.ProfileScreen.route){
             Profile(navControlador)
-
         }
     }
 }

@@ -16,6 +16,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
@@ -32,7 +33,7 @@ fun UsernameField(label:String,username:String,onValueChange:(String) -> Unit,te
         label = { Text(label) },
         singleLine = true,
         colors = textFieldColorValues,
-        modifier = Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp, top = 8.dp),
+        modifier = Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp, top = 8.dp).testTag("textField"),
     )
 
 }
@@ -61,7 +62,7 @@ fun PasswordField(password:String, onValueChange: (String) -> Unit, textFieldCol
         label = { Text("Password") },
         singleLine = true,
         colors = textFieldColorValues,
-        modifier = Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp),
+        modifier = Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp).testTag("textField"),
         trailingIcon = canSeeIcon,
         visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation()
 

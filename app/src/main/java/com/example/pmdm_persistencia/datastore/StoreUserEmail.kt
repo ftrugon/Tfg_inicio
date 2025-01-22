@@ -9,6 +9,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
+// clase para guardar informacion en datastore
 class StoreUserEmail(private val context: Context) {
 
     companion object {
